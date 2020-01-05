@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+    astrometry:
+        build:
+            context: ./bin
+        container_name: 'solver'
+        restart: 'always'
+        stdin_open: true
+        tty: true
+        ports:
+            - 3000:3000
+        volumes:
+            - ./data/index:/usr/local/astrometry/data
